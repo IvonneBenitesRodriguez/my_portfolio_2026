@@ -137,11 +137,11 @@
           {
             "position": {
               "x": 288,
-              "y": 60
+              "y": 50.000000000000156
             },
             "size": {
-              "width": 80,
-              "height": 80
+              "width": 130,
+              "height": 90
             },
             "attrs": {
               "text": {
@@ -252,6 +252,130 @@
               "isWebApplication": true,
               "privilegeLevel": "Anonymous/public — no authentication or elevated permissions required to serve static files.",
               "threats": []
+            }
+          },
+          {
+            "position": {
+              "x": 506,
+              "y": 60
+            },
+            "size": {
+              "width": 112.5,
+              "height": 60
+            },
+            "attrs": {
+              "text": {
+                "text": "NPM Dependencies"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1.5,
+                "strokeDasharray": null
+              }
+            },
+            "visible": true,
+            "shape": "actor",
+            "ports": {
+              "groups": {
+                "top": {
+                  "position": "top",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "right": {
+                  "position": "right",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "bottom": {
+                  "position": "bottom",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                },
+                "left": {
+                  "position": "left",
+                  "attrs": {
+                    "circle": {
+                      "r": 4,
+                      "magnet": true,
+                      "stroke": "#5F95FF",
+                      "strokeWidth": 1,
+                      "fill": "#fff",
+                      "style": {
+                        "visibility": "hidden"
+                      }
+                    }
+                  }
+                }
+              },
+              "items": [
+                {
+                  "group": "top",
+                  "id": "3f7122bc-59fb-4f4b-bb09-080b7c213034"
+                },
+                {
+                  "group": "right",
+                  "id": "32d614f5-d981-4d4e-9f59-69aca58ec9cd"
+                },
+                {
+                  "group": "bottom",
+                  "id": "ed1a8679-ad4a-4e83-8999-fdb1d74b07c0"
+                },
+                {
+                  "group": "left",
+                  "id": "d982c303-1da5-4f38-b67c-d5055c0d5780"
+                }
+              ]
+            },
+            "id": "be6897cf-8a8d-4599-a7d7-e39d7f781c5d",
+            "zIndex": 3,
+            "data": {
+              "type": "tm.Actor",
+              "name": "NPM Dependencies",
+              "description": "Third-party JavaScript packages installed via npm and bundled into the application at build time. Sourced from the public npm registry; not directly maintained by this project, only verified periodically via npm audit.",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "providesAuthentication": false,
+              "threats": []
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           }
         ]
