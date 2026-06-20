@@ -163,13 +163,6 @@
                 "spoofing": 2,
                 "repudiation": 1
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -393,8 +386,8 @@
                 "text": "NPM Dependencies"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -491,9 +484,47 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "43291f7c-a537-4710-a004-ca7d2f5a93a9",
+                  "title": "Typosquatting of NPM Package Names",
+                  "status": "Open",
+                  "severity": "Low",
+                  "type": "Spoofing",
+                  "description": "A malicious package could be published under a name similar to a legitimate one (typosquatting), tricking a developer into installing it.",
+                  "mitigation": "Verify package names carefully before installing; rely on package-lock.json to lock exact versions; review dependencies periodically.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 9,
+                  "score": ""
+                },
+                {
+                  "id": "7518e277-7808-4252-be3d-1443f312f44f",
+                  "title": "Repudiation - Not Applicable",
+                  "status": "NotApplicable",
+                  "severity": "TBD",
+                  "type": "Repudiation",
+                  "description": "N/A — not applicable in this context; npm registry actions are not part of this system's audit scope.",
+                  "mitigation": "Not applicable.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 10,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 1
+              }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -609,6 +640,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 8
+    "threatTop": 10
   }
 }
