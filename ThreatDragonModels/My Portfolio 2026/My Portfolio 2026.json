@@ -137,7 +137,7 @@
           {
             "position": {
               "x": 288,
-              "y": 50.000000000000156
+              "y": 30
             },
             "size": {
               "width": 130,
@@ -260,7 +260,7 @@
               "y": 60
             },
             "size": {
-              "width": 112.5,
+              "width": 140,
               "height": 60
             },
             "attrs": {
@@ -369,14 +369,115 @@
               "hasOpenThreats": false,
               "providesAuthentication": false,
               "threats": []
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "View Portfolio (HTTPS GET)",
+              "description": "Browser sends an HTTPS GET request to GitHub Pages; GitHub Pages responds with the static HTML, CSS, and JS files.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "View Portfolio (HTTPS GET)"
+            ],
+            "id": "a4059445-d644-42d8-9d33-7d1322a43d27",
+            "source": {
+              "x": 233,
+              "y": 80
+            },
+            "target": {
+              "cell": "95ee513f-ff8a-4a8e-91a4-604a26acda38",
+              "port": "3d480e5c-25e5-469c-a30e-974e9252a65b"
+            },
+            "vertices": [
+              {
+                "x": 290,
+                "y": 110
+              }
+            ]
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "targetMarker": {
+                  "name": "block"
+                },
+                "sourceMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 10,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Fetch Dependencies(npm install)",
+              "description": "Build process runs npm install to download required packages from the public npm registry during the build/deploy pipeline.",
+              "outOfScope": false,
+              "isTrustBoundary": false,
+              "reasonOutOfScope": "",
+              "hasOpenThreats": false,
+              "isBidirectional": true,
+              "isEncrypted": false,
+              "isPublicNetwork": true,
+              "protocol": "HTTPS",
+              "threats": [],
+              "trustBoundaryIds": []
+            },
+            "labels": [
+              "Fetch Dependencies(npm install)"
+            ],
+            "id": "aab74a39-05d0-4b31-9e9e-35f0955d1802",
+            "source": {
+              "x": 386,
+              "y": 60
+            },
+            "target": {
+              "cell": "be6897cf-8a8d-4599-a7d7-e39d7f781c5d",
+              "port": "d982c303-1da5-4f38-b67c-d5055c0d5780"
+            },
+            "vertices": [
+              {
+                "x": 410,
+                "y": 80
+              },
+              {
+                "x": 460,
+                "y": 160
+              }
+            ]
           }
         ]
       }
