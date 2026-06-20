@@ -299,7 +299,7 @@
                 {
                   "id": "7145cf0c-f258-471c-8f83-6f79427ef179",
                   "title": "Tampering via compromised github account",
-                  "status": "Open",
+                  "status": "Mitigated",
                   "severity": "Medium",
                   "type": "Tampering",
                   "description": "Compromise of the GitHub account could allow malicious code to be pushed directly to the repository and published live.",
@@ -364,12 +364,19 @@
               ],
               "threatFrequency": {
                 "spoofing": 1,
-                "tampering": 2,
+                "tampering": 3,
                 "repudiation": 1,
                 "informationDisclosure": 1,
                 "denialOfService": 1,
                 "elevationOfPrivilege": 1
               }
+            },
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove"
+              ],
+              "name": null
             }
           },
           {
@@ -518,13 +525,6 @@
                 "spoofing": 1,
                 "repudiation": 1
               }
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -557,8 +557,53 @@
               "isEncrypted": true,
               "isPublicNetwork": true,
               "protocol": "HTTPS",
-              "threats": [],
-              "trustBoundaryIds": []
+              "threats": [
+                {
+                  "id": "8871818c-b338-4308-bcbf-02baba7f5652",
+                  "title": "Tampering of Traffic in Transit",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Tampering",
+                  "description": "An attacker could attempt to modify data in transit between browser and server (man-in-the-middle).",
+                  "mitigation": "Mitigated by HTTPS/TLS encryption, which protects against tampering in transit.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 11,
+                  "score": ""
+                },
+                {
+                  "id": "431902e3-d430-47ce-accc-d6bff5a8fab0",
+                  "title": "Information Disclosure in Transit",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Information disclosure",
+                  "description": "Traffic between browser and server could be intercepted and read.",
+                  "mitigation": "Mitigated by HTTPS encryption of all traffic.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 12,
+                  "score": ""
+                },
+                {
+                  "id": "771d83fa-ed30-4a25-872b-04f9a4eb86ef",
+                  "title": "Denial of Service - Outside Direct Control",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Denial of service",
+                  "description": "High traffic volume or an attack could attempt to overwhelm the connection.",
+                  "mitigation": "Handled by GitHub's infrastructure-level protections; outside direct control.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 13,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1
+              }
             },
             "labels": [
               "View Portfolio (HTTPS GET)"
@@ -583,7 +628,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -604,13 +650,58 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": true,
               "isEncrypted": false,
               "isPublicNetwork": true,
               "protocol": "HTTPS",
-              "threats": [],
-              "trustBoundaryIds": []
+              "threats": [
+                {
+                  "id": "c438f3e4-3e0e-4151-95f8-5ee27e8fdf14",
+                  "title": "Supply Chain Tampering via Malicious Package",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Tampering",
+                  "description": "A compromised or malicious npm package could inject malicious code during install, which would then be bundled into the live site.",
+                  "mitigation": "npm audit run regularly; package-lock.json committed to lock exact versions; Dependabot alerts enabled to flag known vulnerabilities.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 14,
+                  "score": ""
+                },
+                {
+                  "id": "9385c4d5-be8e-40ab-a8f1-874f3718c111",
+                  "title": "Information Disclosure During Package Download",
+                  "status": "Mitigated",
+                  "severity": "Low",
+                  "type": "Information disclosure",
+                  "description": "Traffic to the npm registry could be intercepted.",
+                  "mitigation": "Mitigated by HTTPS encryption of the npm registry connection.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 15,
+                  "score": ""
+                },
+                {
+                  "id": "eb3ce9e5-8401-4beb-9061-287b9eafd7f9",
+                  "title": "Denial of Service - NPM Registry Unavailable",
+                  "status": "NotApplicable",
+                  "severity": "TBD",
+                  "type": "Denial of service",
+                  "description": "If the npm registry is unavailable, the build fails — an availability/reliability issue, not a security vulnerability.",
+                  "mitigation": "Not applicable as a security threat.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 16,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [],
+              "threatFrequency": {
+                "tampering": 1,
+                "informationDisclosure": 1,
+                "denialOfService": 1
+              }
             },
             "labels": [
               "Fetch Dependencies(npm install)"
@@ -630,6 +721,10 @@
                 "y": 80
               },
               {
+                "x": 450,
+                "y": 150
+              },
+              {
                 "x": 460,
                 "y": 160
               }
@@ -640,6 +735,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 10
+    "threatTop": 16
   }
 }
