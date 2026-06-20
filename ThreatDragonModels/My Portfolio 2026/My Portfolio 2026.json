@@ -1,0 +1,16 @@
+{
+  "version": "2.6.2",
+  "summary": {
+    "title": "My Portfolio 2026",
+    "owner": "Ivonne Benites Rodriguez",
+    "description": "Static personal portfolio site built with React + Vite, deployed on GitHub Pages. \nNo backend, database, or user-submitted forms — read-only content served to visitors.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [],
+    "diagramTop": 0,
+    "reviewer": "",
+    "threatTop": 0
+  }
+}
