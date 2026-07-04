@@ -9,6 +9,6 @@ A personal portfolio showcasing my journey into Cybersecurity, Application Secur
 
 
 📸 Portfolio - Home </br></br>
-<img src="./public/layout/1.png" width="300">
+<img src="./public/layout/1.png" width="200">
 
 
