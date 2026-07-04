@@ -73,6 +73,29 @@ const BADGES = [
   { img: "badge-application-flaws.png", title: "OWASP TOP 10 - Application Flaws", desc: "TryHackMe room" },
 ];
 
+const CTFS = [
+  {
+    name: "CTF Collection Vol.1",
+    platform: "TryHackMe",
+    difficulty: "Easy",
+    skills: ["OSINT", "Cryptography", "Encoding", "File carving", "Network analysis"],
+    description:
+      "A multi-technique room: recognizing and decoding Base64 and Brainfuck, XOR and Vigenère cryptanalysis (known-plaintext attack), base conversions, binwalk file carving, OSINT with the Wayback Machine and Google dorking, and analyzing packet captures in Wireshark.",
+    writeup:
+      "https://github.com/IvonneBenitesRodriguez/CTF-writeups/tree/main/ctf-collection-vol1",
+  },
+  {
+    name: "Pickle Rick",
+    platform: "TryHackMe",
+    difficulty: "Easy",
+    skills: ["Web enumeration", "Linux privilege escalation", "Command execution"],
+    description:
+      "A web-based machine inspired by Rick and Morty: enumerating a web server, discovering credentials, achieving command execution, and escalating privileges to root to retrieve the hidden ingredients.",
+    writeup:
+      "https://github.com/IvonneBenitesRodriguez/CTF-writeups/tree/main/pickle-rick",
+  },
+];
+
 const EDUCATION = [
   {
     title: "MSc in Cybersecurity",
@@ -652,6 +675,13 @@ export default function Portfolio() {
                   >
                     Badges
                   </button>
+
+                  <button
+                    className={`tab-btn ${handsTab === "ctfs" ? "active" : ""}`}
+                    onClick={() => setHandsTab("ctfs")}
+                  >
+                    CTFs
+                  </button>
                 </div>
 
                 {handsTab === "projects" &&
@@ -706,6 +736,44 @@ export default function Portfolio() {
                   ))}
                 </div>
                   )}
+
+                {handsTab === "ctfs" && (
+                  <div>
+                    {CTFS.map((c) => (
+                      <div className="project-card" key={c.name}>
+                        <h3>{c.name}</h3>
+                        <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 12 }}>
+                          <span className="pill">{c.platform}</span>
+                          <span className="pill">{c.difficulty}</span>
+                        </div>
+                        <p className="body-text" style={{ marginBottom: 12 }}>
+                          {c.description}
+                        </p>
+                        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                          {c.skills.map((s) => (
+                            <span className="pill" key={s}>
+                              {s}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="project-links">
+                          <a href={c.writeup} target="_blank" rel="noreferrer">
+                            ↳ Writeup
+                          </a>
+                        </div>
+                      </div>
+                    ))}
+                    <div className="project-links" style={{ marginTop: 8 }}>
+                      <a
+                        href="https://github.com/IvonneBenitesRodriguez/CTF-writeups"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        ↳ View all writeups on GitHub
+                      </a>
+                    </div>
+                  </div>
+                )}
               </section>
             )}
 
