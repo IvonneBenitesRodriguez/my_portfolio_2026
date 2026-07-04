@@ -85,7 +85,7 @@ const CTFS = [
       "https://github.com/IvonneBenitesRodriguez/CTF-writeups/tree/main/ctf-collection-vol1",
   },
   {
-    name: "Pickle Rick",
+    name: "CTF Pickle Rick",
     platform: "TryHackMe",
     difficulty: "Easy",
     skills: ["Web enumeration", "Linux privilege escalation", "Command execution"],
