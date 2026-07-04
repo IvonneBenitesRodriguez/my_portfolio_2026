@@ -1,16 +1,14 @@
-# React + Vite
+💼 My new Portfolio 2026
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio showcasing my journey into Cybersecurity, Application Security, and GRC — blending penetration testing, secure software development, OSINT Techniques and threat modeling.
 
-Currently, two official plugins are available:
+🔗 Live site: https://ivonnebenitesrodriguez.github.io/my_portfolio_2026/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+✍️ Actively looking for entry-level opportunities in Cybersecurity, AppSec, and GRC.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+📸 Portfolio - Home </br></br>
+<img src="./public/layout/1.png" width="600">
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
