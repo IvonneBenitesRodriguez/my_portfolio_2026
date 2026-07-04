@@ -8,7 +8,7 @@ A personal portfolio showcasing my journey into Cybersecurity, Application Secur
 ✍️ Actively looking for entry-level opportunities in Cybersecurity, AppSec, and GRC.
 
 
-📸 Portfolio - Home </br></br>
+📸 Portfolio - Home : </br></br>
 <img src="./public/layout/1.png" width="200">
 
 
