@@ -813,8 +813,8 @@ export default function Portfolio() {
                 <div className="eyebrow">reach out</div>
                 <h2 className="section-title">Contact Me</h2>
                 <p className="body-text">
-                  Interested in connecting or OWASP community work?
-                  Send a message.
+                  Interested in connecting?
+                 I will be happy to receive a message.
                 </p>
                 <div className="contact-list">
                 
