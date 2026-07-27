@@ -1,4 +1,4 @@
-💼 My new Portfolio 2026
+## My new Portfolio 2026
 
 A personal portfolio showcasing my journey into Cybersecurity, Application Security, and GRC — blending penetration testing, secure software development, OSINT Techniques and threat modeling.
 
@@ -8,7 +8,7 @@ A personal portfolio showcasing my journey into Cybersecurity, Application Secur
 ✍️ Actively looking for entry-level opportunities in Cybersecurity, AppSec, and GRC.
 
 
-📸 Portfolio - Home </br></br>
-<img src="./public/layout/1.png" width="600">
+📸 Portfolio - Home : </br></br>
+<img src="./public/layout/1.png" width="200">
 
 
