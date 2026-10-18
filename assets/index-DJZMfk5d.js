@@ -12,7 +12,7 @@ Error generating stack: `+e.message+`
   * { box-sizing: border-box; }
 
   .ibr-root {
-    --ink: #140f18;
+    --ink: #ffb5b5;
     --surface: #1f1822;
     --surface-2: #2a212d;
     --line: rgba(255,255,255,0.08);
@@ -326,7 +326,7 @@ Error generating stack: `+e.message+`
   }
   .edu-card h3 { font-family: 'Fraunces', serif; font-size: 17px; margin: 0 0 2px; }
   .edu-card .org { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; }
-  .edu-card .detail { font-size: 13px; color: var(--accent-soft); }
+  .edu-card .detail { font-size: 13px; color: var(--accent); }
 
   .badge-grid {
     display: grid;
