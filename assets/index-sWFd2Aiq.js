@@ -21,7 +21,7 @@ Error generating stack: `+e.message+`
     --accent-soft: #fce4ec;
     --text: #f4edf0;
     --text-muted: #407088;
-    --mono-pink: #ff9fc4;
+    --mono-pink: #ff007b;
     font-family: 'Inter', sans-serif;
     width: 100%;
     min-height: 600px;
@@ -193,6 +193,7 @@ Error generating stack: `+e.message+`
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-weight: 900;
   }
 
   h2.section-title {
@@ -247,6 +248,7 @@ Error generating stack: `+e.message+`
     font-family: 'JetBrains Mono', monospace;
     font-size: 11px;
     color: var(--accent-bright);
+    font-weight: 900;
     background: var(--accent-soft);
     display: inline-block;
     padding: 2px 8px;
@@ -263,7 +265,7 @@ Error generating stack: `+e.message+`
     border-radius: 0 10px 10px 0;
     font-size: 14px;
     color: var(--accent-bright);
-    font-weight: 500;
+    font-weight: 900;
   }
 
   .tabs { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
@@ -282,6 +284,7 @@ Error generating stack: `+e.message+`
     color: var(--text);
     border-color: var(--accent-bright);
     background: var(--surface-2);
+    font-weight: 900;
   }
 
   .project-card {
