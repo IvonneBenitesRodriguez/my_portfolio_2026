@@ -302,6 +302,7 @@ Error generating stack: `+e.message+`
     font-family: 'JetBrains Mono', monospace;
     font-size: 12.5px;
     color: var(--mono-pink);
+    font-weight: 900;
     text-decoration: none;
   }
   .project-links a:hover { color: var(--accent-soft); }
