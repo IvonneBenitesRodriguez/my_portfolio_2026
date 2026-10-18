@@ -20,7 +20,7 @@ Error generating stack: `+e.message+`
     --accent-bright: #c2185b;
     --accent-soft: #fce4ec;
     --text: #f4edf0;
-    --text-muted: #ac98a3;
+    --text-muted: #407088;
     --mono-pink: #ff9fc4;
     font-family: 'Inter', sans-serif;
     width: 100%;
