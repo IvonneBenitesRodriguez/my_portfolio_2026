@@ -380,6 +380,7 @@ Error generating stack: `+e.message+`
    width: 100%;
    height: auto;
    aspect-radio: 16/9;
+   max-height: 300px;
    object-fit: cover;
    border-radius: 8px;
    margin-bottom: 14px;
