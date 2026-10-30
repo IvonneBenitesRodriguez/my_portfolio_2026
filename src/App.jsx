@@ -1,9 +1,14 @@
 import { useState } from "react";
+import owaspSbomImg from "./assets/8-contribucion-mia.png";
+import viennaImg from "./assets/4.png";
+import rediImg from "./assets/event-2.png";
 
 const NAV_ITEMS = [
   { id: "about", label: "About Me" },
   { id: "hands-on", label: "Hands-on" },
   { id: "education", label: "Education" },
+  { id: "articles" , label: "Articles"},
+  {id: "community", label: "Community & Open Source"},
   { id: "resume", label: "Resume" },
   { id: "contact", label: "Contact Me" },
 ];
@@ -13,7 +18,7 @@ const LANGUAGES = [
   { lang: "Italian", level: "C1" },
   { lang: "French", level: "C1" },
   { lang: "English", level: "C1" },
-  { lang: "German", level: "B2" },
+  { lang: "German", level: "C1" },
   { lang: "Japanese", level: "JLPT N4" },
 ];
 
@@ -105,7 +110,7 @@ const EDUCATION = [
   {
     title: "Jr. Penetration Tester",
     org: "TryHackMe",
-    detail: "Certificate ID: THM-FZWGXDOGFJ",
+    detail: "Certificate ID: THM-FZWOXDOGFJ",
   },
   {
     title: "Full-Stack Web Development",
@@ -124,22 +129,98 @@ const EDUCATION = [
   },
 ];
 
+const ARTICLES = [
+  {
+    title: "From Living in the Prompt Window to Building My Own Agent",
+    category: "AI Agents & Security",
+    platform: "Medium",
+    summary:
+      "My journey building an AI agent for my job search, and how I secure it: prompt injection, least privilege and keeping myself in control.",
+    link: "https://medium.com/@ivonnebenites2015/from-living-in-the-prompt-window-to-building-my-own-agent-2f4a040ac66c",
+  },
+  {
+    title: 'From Coffee Machines to the CRA: Why Chip Security Now Matters',
+    category: 'CRA & Semiconductors',
+    platform: "Medium",
+    summary: 
+    "Why everyday devices like a coffee machine fall under the EU Cyber Resilience Act, and what that means for the security of chips inside them.",
+    link: "https://medium.com/@ivonnebenites2015/from-coffee-machines-to-the-cra-why-chip-security-now-matters-9905426164a4",
+  },
+  {
+    title: "My Experience Volunteering at OWASP Global AppSec Vienna 2026",
+    category: "OWASP & Community",
+    platform: "LinkedIn",
+    summary: "A rewarding experience, not only for everything I learned about AI Security and Application Security, but also for the warm OWASP community I got to be part of.",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7477369468227342336/",
+  },
+  {
+    title: "Teaching Security Awareness to Kids at ReDI School Berlin",
+    category: "Security Awareness",
+    platform: "LinkedIn",
+    summary: "Security awareness is important for everyone, but it matters even more that kids, our future citizens, learn as early as possible what they should and shouldn't share online, and how to tell a fake website from a real one. ",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7513917060117356544/",
+  },
+];
+
+const COMMUNITY = [
+{
+    title: "OWASP SBOM VEX Taint Analysis",
+    role: "Reviewer",
+    description: "An OWASP project that automates VEX generation, helping teams see which vulnerabilities in their SBOM are actually exploitable. A topic close to my interests, since the EU Cyber Resilience Act makes SBOMs a requirement for digital products.",
+    link: "https://www.owasp.community/projects/sbom-vex-taint-analysis",
+    img: owaspSbomImg,  
+    imgFit: "contain",
+    alt: "OWASP project page listing Ivonne Benites as Reviewer",
+  },
+  {
+    title: "OWASP Global AppSec Conference Vienna 2026",
+    role: "Volunteer",
+    description: "My first time volunteering with the OWASP community.",
+    link: "",
+    img: viennaImg,
+    imgFit: "contain",
+    imgPosition: "center 70%",
+  },
+  {
+    title: "ReDI School Berlin",
+    role: "Volunteer · Security Awareness Workshop for kids",
+    description: "An interactive website to teach kids how to recognize a fake website.",
+    link: "",
+    img: rediImg,
+    imgFit: "contain",
+    imgPosition: "center 45%",
+  },
+];
+
 const CSS = `
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
   * { box-sizing: border-box; }
 
   .ibr-root {
-    --ink: #140f18;
-    --surface: #1f1822;
-    --surface-2: #2a212d;
-    --line: rgba(255,255,255,0.08);
-    --accent: #8b0057;
-    --accent-bright: #c2185b;
-    --accent-soft: #fce4ec;
-    --text: #f4edf0;
-    --text-muted: #ac98a3;
-    --mono-pink: #ff9fc4;
+    /* Brand palette (beautify-website-presentations) */
+    --hot-pink: #ff347f;
+    --pink: #ffe0e0;
+    --peach: #ffe8cf;
+    --sky: #c7f3ff;
+    --mint: #ccffec;
+    --lilac: #ffdcf5;
+    --blue: #6173f4;
+    --plum: #6a425c;
+    --brown: #463832;
+    --off-white: #fffdfb;
+
+    /* Roles: background off-white, text brown, headings plum, accent hot-pink */
+    --ink: var(--off-white);
+    --surface: var(--peach);
+    --surface-2: var(--lilac);
+    --line: rgba(70,56,50,0.18);
+    --accent: var(--hot-pink);
+    --accent-bright: var(--hot-pink);
+    --accent-soft: var(--off-white);
+    --text: var(--brown);
+    --text-muted: var(--plum);
+    --mono-pink: var(--hot-pink);
     font-family: 'Inter', sans-serif;
     width: 100%;
     min-height: 600px;
@@ -150,7 +231,7 @@ const CSS = `
 
   /* ---------- WELCOME PAGE ---------- */
   .welcome {
-    background: linear-gradient(180deg, #bfe6f5 0%, #d9f1fa 55%, #eef9fc 100%);
+    background: linear-gradient(180deg, #c7f3ff 0%, #fffdfb 100%);
     min-height: 600px;
     position: relative;
     display: flex;
@@ -198,7 +279,7 @@ const CSS = `
     font-family: 'Fraunces', serif;
     font-weight: 600;
     font-size: clamp(28px, 5vw, 44px);
-    color: #1d4e63;
+    color: #6a425c;
     margin: 8px 0;
     line-height: 1.3;
     opacity: 0;
@@ -206,8 +287,8 @@ const CSS = `
     animation: riseIn 0.7s ease forwards;
   }
   .greeting p:nth-child(1) { animation-delay: 0.1s; }
-  .greeting p:nth-child(2) { animation-delay: 0.4s; color: #2c6378; }
-  .greeting p:nth-child(3) { animation-delay: 0.7s; color: #3a7689; }
+  .greeting p:nth-child(2) { animation-delay: 0.4s; color: #463832; }
+  .greeting p:nth-child(3) { animation-delay: 0.7s; color: #463832; }
 
   @keyframes riseIn {
     to { opacity: 1; transform: translateY(0); }
@@ -223,10 +304,11 @@ const CSS = `
     padding: 14px 34px;
     border-radius: 999px;
     border: none;
-    background: #ffffff;
-    color: #1d4e63;
+    background: #fffdfb;
+    color: #6a425c;
+    min-height: 44px;
     cursor: pointer;
-    box-shadow: 0 8px 24px rgba(29,78,99,0.18);
+    box-shadow: 0 8px 24px rgba(106,66,92,0.18);
     border-bottom: 4px solid;
     border-image: linear-gradient(90deg,#ff6b6b,#ffa94d,#ffd43b,#69db7c,#4dabf7,#9775fa) 1;
     opacity: 0;
@@ -235,7 +317,7 @@ const CSS = `
     transition: transform 0.2s ease;
   }
   .enter-btn:hover { transform: translateY(-2px); }
-  .enter-btn:focus-visible { outline: 3px solid #1d4e63; outline-offset: 3px; }
+  .enter-btn:focus-visible { outline: 3px solid #6a425c; outline-offset: 3px; }
 
   /* ---------- MAIN SITE ---------- */
   .site {
@@ -246,53 +328,97 @@ const CSS = `
     flex-direction: column;
   }
 
+  /* Mobile first: brand + menu button on one row, links stacked below */
   .site nav {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 4px;
-    padding: 18px 28px;
+    padding: 8px 16px;
     border-bottom: 1px solid var(--line);
-    background: var(--surface);
+    background: var(--pink);
   }
 
   .nav-brand {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    color: var(--mono-pink);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--plum);
     margin-right: auto;
-    align-self: center;
+    min-height: 44px;
+    padding: 0 8px;
     letter-spacing: 0.04em;
     background: none;
     border: none;
     cursor: pointer;
   }
 
+  .nav-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--plum);
+    background: none;
+    border: 2px solid var(--plum);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .nav-toggle:focus-visible,
+  .nav-brand:focus-visible,
+  .nav-btn:focus-visible { outline: 3px solid var(--hot-pink); outline-offset: 2px; }
+
+  .nav-links {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    padding-bottom: 8px;
+  }
+  .nav-links.open { display: flex; }
+
   .nav-btn {
     position: relative;
     background: none;
     border: none;
-    color: var(--text-muted);
+    color: var(--text);
     font-family: 'Inter', sans-serif;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 1rem;
+    min-height: 44px;
     padding: 8px 14px;
+    text-align: left;
     cursor: pointer;
     transition: color 0.2s ease;
   }
   .nav-btn::after {
     content: "";
     position: absolute;
-    left: 14px; right: 14px; bottom: 2px;
+    left: 14px; right: 14px; bottom: 4px;
     height: 2px;
-    background: var(--accent-bright);
+    background: var(--hot-pink);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.25s ease;
   }
-  .nav-btn:hover { color: var(--text); }
+  .nav-btn:hover { color: var(--plum); }
   .nav-btn:hover::after { transform: scaleX(1); }
-  .nav-btn.active { color: var(--text); }
+  .nav-btn.active { color: var(--plum); font-weight: 700; }
   .nav-btn.active::after { transform: scaleX(1); }
+
+  /* Tablet and up: links in one row, no menu button */
+  @media (min-width: 768px) {
+    .site nav { padding: 8px 28px; }
+    .nav-toggle { display: none; }
+    .nav-links {
+      display: flex;
+      flex-basis: auto;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 4px;
+      padding-bottom: 0;
+    }
+    .nav-btn { text-align: center; }
+  }
 
   main.content {
     flex: 1;
@@ -311,42 +437,44 @@ const CSS = `
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
+    font-weight: 900;
   }
 
   h2.section-title {
     font-family: 'Fraunces', serif;
     font-weight: 600;
-    font-size: clamp(22px, 6vw, 30px);
+    font-size: 1.75rem;
     margin: 0 0 18px;
-    color: var(--text);
+    color: var(--plum);
     text-align: center;
   }
 
   p.body-text {
-    font-size: 15px;
+    font-size: 1rem;
     line-height: 1.7;
-    color: var(--text-muted);
+    color: var(--text);
     margin: 0 0 16px;
   }
 
   .pill {
     display: inline-block;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
+    font-size: 0.8125rem;
     padding: 5px 11px;
     border-radius: 999px;
     border: 1px solid var(--line);
-    color: var(--text);
-    background: var(--surface-2);
+    color: var(--plum);
+    background: var(--lilac);
     margin: 0 8px 8px 0;
   }
 
   .link-inline {
-    color: var(--mono-pink);
+    color: var(--plum);
+    font-weight: 600;
     text-decoration: none;
-    border-bottom: 1px dashed var(--mono-pink);
+    border-bottom: 2px dashed var(--hot-pink);
   }
-  .link-inline:hover { color: var(--accent-soft); }
+  .link-inline:hover { color: var(--text); }
 
   .lang-grid {
     display: grid;
@@ -360,12 +488,13 @@ const CSS = `
     border-radius: 10px;
     padding: 12px 14px;
   }
-  .lang-card .lang-name { font-size: 14px; font-weight: 500; }
+  .lang-card .lang-name { font-size: 1rem; font-weight: 500; }
   .lang-card .lang-level {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: var(--accent-bright);
-    background: var(--accent-soft);
+    font-size: 0.8125rem;
+    color: var(--plum);
+    font-weight: 700;
+    background: var(--off-white);
     display: inline-block;
     padding: 2px 8px;
     border-radius: 999px;
@@ -376,31 +505,34 @@ const CSS = `
     margin-top: 28px;
     margin-bottom: 32px;
     padding: 16px 18px;
-    border-left: 3px solid var(--accent-bright);
-    background: var(--surface);
+    border-left: 4px solid var(--hot-pink);
+    background: var(--sky);
     border-radius: 0 10px 10px 0;
-    font-size: 14px;
-    color: var(--accent-bright);
-    font-weight: 500;
+    font-size: 1rem;
+    color: var(--plum);
+    font-weight: 600;
   }
 
   .tabs { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
   .tab-btn {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 1rem;
+    min-height: 44px;
     padding: 10px 16px;
     border-radius: 8px;
     border: 1px solid var(--line);
-    background: var(--surface);
-    color: var(--text-muted);
+    background: var(--pink);
+    color: var(--text);
     cursor: pointer;
   }
   .tab-btn.active {
-    color: var(--text);
-    border-color: var(--accent-bright);
-    background: var(--surface-2);
+    color: #fff;
+    border-color: var(--hot-pink);
+    background: var(--hot-pink);
+    font-weight: 700;
   }
+  .tab-btn:focus-visible { outline: 3px solid var(--plum); outline-offset: 2px; }
 
   .project-card {
     background: var(--surface);
@@ -411,18 +543,25 @@ const CSS = `
   }
   .project-card h3 {
     font-family: 'Fraunces', serif;
-    font-size: 19px;
+    font-size: 1.25rem;
     margin: 0 0 8px;
-    color: var(--text);
+    color: var(--plum);
   }
-  .project-links { display: flex; gap: 14px; margin-top: 12px; }
+  .project-links { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-top: 6px; }
   .project-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12.5px;
-    color: var(--mono-pink);
-    text-decoration: none;
+    font-size: 0.875rem;
+    color: var(--plum);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--hot-pink);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
   }
-  .project-links a:hover { color: var(--accent-soft); }
+  .project-links a:hover { color: var(--text); }
 
   .edu-card {
     display: flex;
@@ -442,9 +581,9 @@ const CSS = `
     flex-shrink: 0;
     text-align: center;
   }
-  .edu-card h3 { font-family: 'Fraunces', serif; font-size: 17px; margin: 0 0 2px; }
-  .edu-card .org { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; }
-  .edu-card .detail { font-size: 13px; color: var(--accent-soft); }
+  .edu-card h3 { font-family: 'Fraunces', serif; font-size: 1.25rem; margin: 0 0 2px; color: var(--plum); }
+  .edu-card .org { font-size: 1rem; color: var(--text); margin-bottom: 4px; }
+  .edu-card .detail { font-size: 0.9375rem; color: var(--plum); font-weight: 600; }
 
   .badge-grid {
     display: grid;
@@ -465,14 +604,14 @@ const CSS = `
     display: block;
   }
   .badge-card .badge-title {
-    font-size: 13px;
+    font-size: 0.9375rem;
     font-weight: 600;
-    color: var(--text);
+    color: var(--plum);
     margin: 8px 6px 2px;
   }
   .badge-card .badge-desc {
-    font-size: 11px;
-    color: var(--text-muted);
+    font-size: 0.8125rem;
+    color: var(--text);
     margin: 0 6px 10px;
     line-height: 1.4;
   }
@@ -482,35 +621,60 @@ const CSS = `
     align-items: center;
     gap: 8px;
     font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 15px;
+    font-weight: 700;
+    font-size: 1.0625rem;
+    min-height: 44px;
     padding: 13px 26px;
     border-radius: 8px;
-    background: var(--accent);
+    background: var(--hot-pink);
     color: #fff;
     text-decoration: none;
     border: none;
     cursor: pointer;
   }
-  .resume-btn:hover { background: var(--accent-bright); }
+  .resume-btn:hover { background: var(--plum); }
+  .resume-btn:focus-visible { outline: 3px solid var(--plum); outline-offset: 3px; }
+
+  .card-with-img{
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+  align-items: start;
+  }
+
+   .card-img {
+   width: 100%;
+   aspect-ratio: 4/3;
+   object-fit: cover;
+   border-radius: 8px;
+   display: block;
+   background: var(--surface-2);
+   }
 
   .contact-list { margin-top: 8px; }
   .contact-list a {
     display: block;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 14px;
+    font-size: 1rem;
     color: var(--text);
     text-decoration: none;
+    min-height: 44px;
     padding: 10px 0;
     border-bottom: 1px solid var(--line);
+    overflow-wrap: anywhere;
   }
-  .contact-list a:hover { color: var(--mono-pink); }
+  .contact-list a:hover { color: var(--plum); text-decoration: underline; text-decoration-color: var(--hot-pink); }
 
   .placeholder-note {
-    font-size: 12px;
-    color: var(--text-muted);
+    font-size: 0.875rem;
+    color: var(--plum);
     font-style: italic;
     margin-top: 4px;
+  }
+    @media (max-width: 600px){
+    .card-with-img {
+    grid-template-columns: 1fr;
+    }
   }
 `;
 
@@ -566,6 +730,7 @@ export default function Portfolio() {
   const [active, setActive] = useState("about");
   const [handsTab, setHandsTab] = useState("projects");
   const [emailRevealed, setEmailRevealed] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const EMAIL_USER = "REPLACE_ME";
   const EMAIL_DOMAIN = "example.com";
@@ -580,16 +745,27 @@ export default function Portfolio() {
       {entered && (
         <div className="site">
           <nav>
-            <button className="nav-brand" onClick={() => setEntered(false)}>Home</button>
-            {NAV_ITEMS.map((item) => (
-              <button
-                key={item.id}
-                className={`nav-btn ${active === item.id ? "active" : ""}`}
-                onClick={() => setActive(item.id)}
-              >
-                {item.label}
-              </button>
-            ))}
+            <button className="nav-brand" onClick={() => { setEntered(false); setMenuOpen(false); }}>Home</button>
+            <button
+              className="nav-toggle"
+              aria-expanded={menuOpen}
+              aria-controls="site-menu"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              onClick={() => setMenuOpen(!menuOpen)}
+            >
+              {menuOpen ? "✕" : "☰"}
+            </button>
+            <div id="site-menu" className={`nav-links ${menuOpen ? "open" : ""}`}>
+              {NAV_ITEMS.map((item) => (
+                <button
+                  key={item.id}
+                  className={`nav-btn ${active === item.id ? "active" : ""}`}
+                  onClick={() => { setActive(item.id); setMenuOpen(false); }}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
           </nav>
 
           <main className="content">
@@ -601,10 +777,8 @@ export default function Portfolio() {
                  I'm Ivonne Benites Rodriguez. My background blends penetration testing,
                 secure software development, and threat modeling — with an MSc in
                 Cybersecurity (Merit, Thesis: Distinction) from Arden University Berlin.
-                I'm eager to learn and deeply committed to growing in Application
-                Security and GRC, with hands-on practice through the TryHackMe Junior
-                Penetration Tester Path, the Governance &amp; Regulation room, and
-               volunteering at OWASP Global AppSec Conference Vienna 2026.
+               Today, my focus is on AI Security, software supply chain security (SBOM & VEX), chip security under the EU Cyber Resilience Act, 
+               and security awareness: building AI agents, reviewing an OWASP SBOM/VEX project, writing about the CRA, and teaching kids to stay safe online.
                 </p>  
                   <p className="body-text">
                   I'm also the founder of{" "}
@@ -618,8 +792,8 @@ export default function Portfolio() {
                 <div className="eyebrow">Research</div>
                   <p className="body-text">
                      Co-author, "Penetration Testing: A Comprehensive Guide for Cybersecurity
-                     Practitioners" — under review, Journal of Computer Virology and Hacking
-                    Techniques (Springer Nature), submitted October 2025.
+                     Practitioners" — in preparation, Discover Computing Journal
+                     (Springer Nature).
                   </p>
 
                   <div className="collab-note">
@@ -794,12 +968,75 @@ export default function Portfolio() {
               </section>
             )}
 
+          {active === "articles" && (
+  <section>
+    {/* <div className="eyebrow">My Articles</div> */}
+     <h2 className="section-title">My Articles</h2> 
+    {ARTICLES.map((a) => (
+      <div className="project-card" key={a.title}>
+        <h3>{a.title}</h3>
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap", marginBottom: 12 }}>
+          <span className="pill">{a.category}</span>
+          <span className="pill">{a.platform}</span>
+        </div>
+        <p className="body-text" style={{ marginBottom: 0 }}>
+          {a.summary}
+        </p>
+        <div className="project-links">
+          <a href={a.link} target="_blank" rel="noreferrer">
+            ↳ Read on {a.platform}
+          </a>
+        </div>
+      </div>
+    ))}
+  </section>
+)}
+
+{active === "community" && (
+  <section>
+    <div className="eyebrow">giving back</div>
+    <h2 className="section-title">Community & Open Source</h2>
+    {COMMUNITY.map((c) => (
+      <div className={`project-card ${c.img ? "card-with-img" : ""}`} key={c.title}>
+        {c.img && ( 
+          <img 
+          className="card-img"
+          src={c.img}
+          alt={c.alt}
+          style={{
+            objectPosition: c.imgPosition || "center",
+            objectFit: c.imgFit || "cover",
+          }}
+          />
+        )}
+        <div>
+        <h3>{c.title}</h3>
+        <span className="pill">{c.role}</span>
+        {c.description && (
+          <p className="body-text" style={{ marginTop: 8, marginBottom: 0 }}>
+            {c.description}
+          </p>
+        )}
+        {c.link && (
+          <div className="project-links">
+            <a href={c.link} target="_blank" rel="noreferrer">
+              ↳ Learn more
+            </a>
+          </div>
+        )}
+      </div>
+      </div>
+    ))}
+  </section>
+)}
+
+
             {active === "resume" && (
               <section>
-                <div className="eyebrow">document</div>
+                {/* <div className="eyebrow"></div> */}
                 <h2 className="section-title">Resume</h2>
                 <p className="body-text">Download my current CV as a PDF.</p>
-                <a className="resume-btn" href="public/resume.pdf" download="resume.pdf">
+                <a className="resume-btn" href={`${import.meta.env.BASE_URL}resume_2026.pdf`} download="resume_2026.pdf">
                   ⭳ Download Resume
                 </a>
                 <p className="placeholder-note">
